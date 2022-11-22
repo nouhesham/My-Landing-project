@@ -1,0 +1,643 @@
+/* 3shan a3ml lon variable mashy  */
+
+:root {
+    /* --main-color: #10cab7; */
+    --main-color: rgb(41, 78, 143);
+    --padding-top: 60px;
+    --padding-bottom: 60px;
+}
+
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+h1 {
+    /* color: blue; */
+    font-family: 'Work Sans', sans-serif;
+    /* margin: 0; */
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: ghostwhite;
+}
+
+/* .parent {
+    color: blue;
+    background-color: gray; */
+
+
+
+.container {
+    /* background-color: yellow; */
+    /* align-content: center; */
+    /* width: 600px; */
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+@media (min-width:768px) {
+    .container {
+        width: 750px
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        width: 970px
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        width: 1170px
+    }
+}
+
+.header {
+    padding: 20px;
+}
+
+.header .container {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+.header .logo {
+    /* width: 200px; */
+    /* height: 200px; */
+    width: 150px;
+    height: 150px;
+    /* border: 2px black solid; */
+    /* margin: 1px; */
+    /* margin-left: 0;
+     */
+    /* position: absolute; */
+    /* left: 2px; */
+
+}
+
+/* 3shan 5ater al elemnts gwah htb2a elemnts absolute , f mkanha 22dr a8ayro related ll parent dah 3shan al dnia mtb2ash sha5tabeta*/
+.header .links {
+    position: relative;
+    left: 100px;
+}
+
+@media(max-width:768px) {
+    .header .links {
+        position: relative;
+        left: 5px;
+    }
+}
+
+.header .links .icon {
+    width: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+
+}
+
+.header .links .icon span {
+    background-color: black;
+    margin-bottom: 5px;
+    margin-right: 0px;
+    justify-content: flex-end;
+    /* position: relative; */
+
+}
+
+.header .links .icon span:first-child {
+    height: 2px;
+    width: 100%;
+}
+
+.header .links .icon span:nth-child(2) {
+    height: 3px;
+    width: 60%;
+}
+
+.header .links .icon span:nth-child(2):hover {
+    width: 100%;
+}
+
+/* or gwa al link msln 22ol hover we a8yr al widths */
+
+
+
+
+
+.header .links .icon span:last-child {
+    height: 2px;
+    width: 100%;
+
+}
+
+/* The right property affects the horizontal position of a positioned element. This property has no effect on non-positioned elements. */
+
+/* If position: absolute; or position: fixed; - 
+the right property sets the right edge of an element to a unit to the right of the
+ right edge of its nearest positioned ancestor */
+.header .container ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6f6;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 15px);
+    min-width: 200px;
+    display: none;
+    z-index: 1;
+}
+
+.header .container .links:hover ul {
+    display: block;
+}
+
+.header .container ul:before {
+
+    /* 3shan eshel al dayra 
+   */
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #f6f6f6 transparent;
+    position: absolute;
+    right: 7px;
+    top: -20px;
+}
+
+
+
+.header .container ul a {
+    /* padding: 2px */
+    padding: 16px;
+    display: block;
+    font-size: 20px;
+    text-decoration: none;
+    color: #333;
+    /* transition: 0.3s; */
+
+
+}
+
+.header .container ul a:hover {
+    padding-left: 25px;
+    transition: 0.3s;
+}
+
+/* 3shan ana 3yza 5at l koloh m3ada a5er wahd */
+.header .container .links ul li:not(:last-child) a {
+    border-bottom: 2px grey solid;
+}
+
+/* hena hwa bedwr gw al csss f lazm atl3o bara al awel we b3d kda ed5ol gwa al images folder */
+.landing {
+    background-image: url(../images/mountainn.jfif);
+    background-size: cover;
+    /* object-fit: cover; */
+    height: calc(100vh - 100px);
+    margin: 0;
+    position: relative;
+}
+
+.landing .intro-text {
+    margin: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.landing .intro-text h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--main-color);
+    /* color: var(--main-color--); */
+
+}
+
+.landing .intro-text p {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+
+.features {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: bisque;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+.features .container {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* justify-content: center; */
+
+    margin-left: 100px;
+    grid-gap: 20px;
+    /* padding: 20px; */
+
+    /*  */
+}
+
+@media(max-width:767px) {
+    .features .container {
+        margin: -40px;
+        /* max-width: 350px; */
+        column-fill: auto;
+    }
+
+
+}
+
+.features .feet {
+    text-align: center;
+    padding: 20px;
+
+
+    ;
+}
+
+.features .feet i {
+    color: var(--main-color);
+
+}
+
+.features .feet h3 {
+    font-weight: 800;
+    margin: 30px 0;
+
+}
+
+.features .feet p {
+    line-height: 1.8;
+    color: blue;
+    font-size: 17px;
+    max-width: 400px;
+    /* background-color: burlywood; */
+    /* width: max-content; */
+}
+
+
+
+
+.specialname {
+    color: #ebeced;
+    font-size: 100px;
+    text-align: center;
+    /* 3mlna margin zero 3shan tb2a laz2a shwaya mn fo2  */
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin-top: 30px;
+    /* margin-left: 200px; */
+}
+
+/* al plus m3anaha next selector */
+
+.specialname+p {
+    margin: -35px 0 0;
+    /* text-align: center; */
+    color: #797977;
+    /* margin-left: 200px; */
+    text-align: center;
+    font-size: 20px;
+
+}
+
+/* 3shan shahst al mobile bs tban 3edla */
+
+@media(max-width:767px) {
+    .specialname {
+        font-size: 60px;
+    }
+
+    .specialname+p {
+        margin-top: -20px;
+
+    }
+}
+
+.services {
+    display: flex;
+    justify-content: center;
+}
+
+.service-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 200px;
+}
+
+.service-content .srv {
+    padding: 20px;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 50px;
+    /* align-items: center; */
+}
+
+.services .service-content .srv i {
+    color: var(--main-color);
+    flex-basis: 60px;
+}
+
+.services .service-content .srv .text {
+    color: var(--main-color);
+    /* flex-basis: 60px; */
+}
+
+.services .service-content #love {
+    width: 80px;
+    height: 400px;
+}
+
+@media(max-width:767px) {
+    .services .service-content .srv {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        left-margin: 0;
+
+    }
+
+    .services {
+        display: flex;
+        justify-content: center;
+    }
+
+
+}
+
+
+.portofolio {
+    background-color: ghostwhite;
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    display: flex;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.portcontent {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+    margin-top: 80px;
+
+}
+
+.portcontent .card {
+    background-color: rgb(100, 149, 237);
+    margin-top: 20px;
+}
+
+.portcontent .card img {
+    margin-top: 20px;
+}
+
+h3 {
+    font-weight: 300;
+    font-style: italic;
+}
+
+
+
+
+/* startaboutsection */
+
+.about {
+    display: flex;
+    justify-content: center;
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    /* text-align: center; */
+}
+
+.aboutcont {
+    display: grid;
+    /* display: grid; */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 100px;
+    margin-top: 80px;
+    padding-left: 100px;
+}
+
+.aboutcont .info {
+    background-color: aquamarine;
+    /* margin: 20px; */
+    /* width: 500px; */
+    /* padding-top: var(--padding-top); */
+    /* padding-bottom: var(--padding-bottom); */
+    padding-right: 20px;
+    padding-left: 40px;
+
+}
+
+.about .aboutimage {
+    position: relative;
+    right: 60px;
+
+}
+
+/* 3shan a3ml ashkal abl we b3d al sora  */
+
+.aboutcont .aboutimage::before {
+    content: "";
+    width: 30px;
+    height: calc(100% + 30px);
+    background-color: bisque;
+    position: absolute;
+    top: -40px;
+    z-index: -1;
+    left: -10px display:block;
+}
+
+.aboutcont .aboutimage::after {
+    top: -30px;
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 155px;
+    border-left: 60px solid var(--main-color);
+    border-bottom: 60px solid var(--main-color);
+    z-index: -1;
+    right: -5px;
+    left: 250px;
+    display: block;
+}
+
+@media(max-width:977px) {
+    .aboutcont .aboutimage::after {
+        display: none
+    }
+
+    .aboutcont .aboutimage::before {
+        display: none
+    }
+
+    .about .aboutimage {
+        position: relative;
+        right: 100px;
+
+    }
+}
+
+@media(max-width:1200px) {
+    .aboutcont .aboutimage {
+        margin-left: 75px;
+
+
+    }
+}
+
+
+
+/* search al far2 ,mabenhom */
+.aboutcont .info p:first-of-type {
+    font-style: italic;
+    font-weight: 500;
+
+}
+
+
+
+/* .aboutcont .info p:first-child {
+    text-decoration: line-through;
+} */
+aboutcont .info p:last-of-type {
+    font-style: italic;
+    font-weight: 200;
+
+}
+
+
+
+
+
+
+
+
+.aboutcont .info hr {
+    /* height: 12px; */
+    /* color: var(--main-color); */
+    /* width: 300px; */
+    border-color: black;
+    font-weight: bold;
+    /* position: absolute; */
+    /* left: 500px; */
+    margin-left: 0px;
+
+}
+
+/* startcontactsection */
+
+
+
+.contact {
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    background-color: whitesmoke;
+}
+
+.contact .info {
+
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    /* text-decoration: underline; */
+    padding-top: var(--padding-top);
+    color: var(--main-color);
+
+
+}
+
+@media(max-width:767px) {
+
+    .contact .info,
+    .contact .iconss {
+
+        text-align: center;
+        font-size: 10px;
+        font-weight: 500;
+    }
+
+
+}
+
+.contact .info a {
+    text-decoration: underline;
+    display: block;
+
+}
+
+.contact .container .info .iconss {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+}
+
+.contact .info i {
+    /* padding: 20px; */
+    color: blue;
+    margin-left: 20px;
+    margin-top: 30px
+}
+
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 30px 10px;
+    background-color: var(--main-color);
+    font-weight: 500;
+}
+
+.footer span {
+    font-weight: bold;
+    color: yellow;
+    letter-spacing: 2px;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
